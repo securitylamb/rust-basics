@@ -66,7 +66,4 @@ Find additional learning resources, including books, tutorials, and online commu
 Contributing
 We welcome contributions! If you find an issue, have a suggestion, or want to add more content, please open an issue or submit a pull request.
 
-License
-This repository is licensed under the MIT License - see the LICENSE file for details.
-
 Happy coding! 🚀
