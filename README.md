@@ -1,5 +1,5 @@
-#Rust Basics
-Welcome to the Rust Basics repository! This repository is designed to provide you with a comprehensive introduction to the Rust programming language. Whether you are a seasoned developer exploring a new language or a beginner taking your first steps into programming, this guide aims to make your Rust journey enjoyable and informative.
+Rust Basics  ->  
+ Welcome to the Rust Basics repository! This repository is designed to provide you with a comprehensive introduction to the Rust programming language. Whether you are a seasoned developer exploring a new language or a beginner taking your first steps into programming, this guide aims to make your Rust journey enjoyable and informative.
 
 Table of Contents
 Introduction
