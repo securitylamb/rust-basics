@@ -33,37 +33,37 @@ Explore the content in the order provided in the Table of Contents.
 Syntax Overview
 Learn the basic syntax of Rust, including variables, expressions, and statements. Understand the principles of ownership, borrowing, and lifetimes.
 
-Data Types
+Data Types =>
 Explore Rust's rich set of primitive data types and learn how to create custom data structures using structs and enums.
 
-Control Flow
+Control Flow  =>
 Understand how to control the flow of your program with if statements, loops, and pattern matching.
 
-Functions
+Functions =>
 Discover how to define and call functions in Rust, including parameters, return values, and closures.
 
-Structs and Enums
+Structs and Enums  =>
 Learn how to create and use structs and enums to organize data and behavior in your programs.
 
-Error Handling
+Error Handling =>
 Explore Rust's robust error handling mechanisms, including Result and the ? operator.
 
-Concurrency
+Concurrency =>
 Understand Rust's approach to concurrent programming, including threads and the async/await syntax.
 
-Crates and Packages
+Crates and Packages =>
 Explore the Rust package manager (Cargo) and learn how to manage dependencies using crates.
 
-Testing
+Testing =>
 Write tests for your Rust code to ensure its correctness and maintainability.
 
-Advanced Topics
+Advanced Topics =>
 Delve into more advanced topics, such as traits, generics, and metaprogramming.
 
-Resources
+Resources =>
 Find additional learning resources, including books, tutorials, and online communities.
 
-Contributing
+Contributing =>
 We welcome contributions! If you find an issue, have a suggestion, or want to add more content, please open an issue or submit a pull request.
 
 Happy coding! 🚀
