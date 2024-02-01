@@ -1,6 +1,6 @@
 use std::io;
 
-pub fn testing() {
+pub fn variable() {
 //   shadowing in rust 
     let x = 5;
     let x=x+1;
@@ -66,12 +66,15 @@ pub fn testing() {
     io::stdin().read_line(&mut index).expect("Failed to read line !");
 
     let index:usize = index.trim().parse().expect("Index entered not present");
+    // it can be that rust allow usize for index
 
     let element = arr[index];
 
     println!("The value of the element at index {index} is: {element}");
 
-    
+    //  here in case of invalid index it will not access invalid memory but in rust it will straight way goes to exit
 
-    
+
+
+
 }

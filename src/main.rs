@@ -1,7 +1,8 @@
-mod variable;
-
+//  saMPLE CODE FOR VARIABLE 
+// mod variable;
+mod function;
 fn main() {
     println!("this is the main file !!!");
-    variable::testing();
-    
+    // variable::variable();
+    function::fun();
 }
