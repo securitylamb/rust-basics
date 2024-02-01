@@ -1,3 +1,6 @@
+mod variable;
+
 fn main() {
-    println!("Hello, world!");
+    println!("this is the main file !!!");
+    variable::testing();
 }
