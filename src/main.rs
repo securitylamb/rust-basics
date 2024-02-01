@@ -1,8 +1,10 @@
 //  saMPLE CODE FOR VARIABLE 
 // mod variable;
-mod function;
+// mod function;
+mod control_flow;
 fn main() {
     println!("this is the main file !!!");
     // variable::variable();
-    function::fun();
+    // function::fun();
+    control_flow::flow();
 }
