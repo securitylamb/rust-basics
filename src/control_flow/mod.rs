@@ -39,6 +39,42 @@ pub fn flow(){
         };
         println!("{result_loop}");
 
+        // break and continue 
 
+        let mut count = 0;
+        // this is called labelled loop
+        'counting_up :loop{
+            println!("count : {count}");
+            let mut remaining = 10;
+            loop{
+                println!("remaining {remaining}");
+                if remaining == 9 {
+                    break;
+                }
+                if count == 2 {
+                    break 'counting_up;
+                }
+                remaining -=1;
+            }
+            count+=1;
+        }
+        println!("END COUNT :{count}");
+
+
+
+
+
+        // advance for loop
+        let ary = [1,2,3,4,5];
+        for element in ary {
+            println!("the value is {element}")
+        }
+
+
+        //  we can also  create array in a particular range
+        println!("for loop in a range ");
+        for number in (1..4).rev(){
+            println!("{number}");
+        }
 
 }
