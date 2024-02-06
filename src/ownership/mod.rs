@@ -182,5 +182,27 @@ This type manages data allocated on the heap and as such is able to store an amo
     example_string.push_str(",  World!!!");
     println!("Length: {}, Capacity: {}", example_string.len(), example_string.capacity());
   
+    /*
+                 let s1 = String::from("hello");
+                 let s2 = s1;
+                  what if they both go out of scope this will make them memory which is pointing to the same location or we can say double free memory 
+                  as the pointer of string point to same location of heap for both the string it is one of the bug of freeing memory twice 
+     */
 
-}
+     let s1 = String::from("hello");
+     let s2 = s1;
+     
+     println!("{}, world!", s2);
+      
+             /*
+             in the above code if we tried 
+             println!("{}, world!", s1);
+             it will give bcz s1 is out scope
+              */
+          // if we dont want to make deep copy of string we can make it we can use clone
+                        
+          let s3 = String::from("hello");
+          let s4 = s3.clone();
+          println!("{s3} {s4} are the clone data");
+          //  it actually makes a seprate copy of our string 
+    }
