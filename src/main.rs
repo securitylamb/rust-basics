@@ -2,8 +2,8 @@
 // mod variable;
 // mod function;
 // mod control_flow;
-mod ownership;
-    mod  refrence_borrowing;
+// mod ownership;
+mod  refrence_borrowing;
   // mod extra {
   //   pub mod tcp_basic;
   // }
