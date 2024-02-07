@@ -204,5 +204,127 @@ This type manages data allocated on the heap and as such is able to store an amo
           let s3 = String::from("hello");
           let s4 = s3.clone();
           println!("{s3} {s4} are the clone data");
-          //  it actually makes a seprate copy of our string 
+          //  it actually makes a seprate copy of our string data in heap 
+
+
+            //   lets talk about integet a bit 
+
+            let x =5;
+            let y =x;
+            println!("x = {} and y = {}",x,y);
+          // here we didnot call clone() method and still we were able to call x 
+          /*
+          The reason is that types such as integers that have a known size at compile time are stored entirely on the stack, so copies of the actual values are quick to make. That means there’s no reason we would want to prevent x from being valid after we create the variable y. In other words, there’s no difference between deep and shallow copying here, so calling clone wouldn’t do anything different from the usual shallow copying, and we can leave it out.
+           */
+
+            //  COPY TRAIT 
+            /*
+            
+            -> an anotation used in rust to know it is stored in stack 
+            -> they are copied rather than moved when assigned to new variable 
+            -> this allow them to remain valid even after assigment
+             */
+
+            //  IN THIS EXAMPLE I AM TESTING COPY TRAIT FOR A STRING WHICH WAS ALREADY DEFINED 
+
+            // let new_string_1 = "mystring";
+            // let new_string_2 = new_string_1;
+            // println!("{new_string_1}");
+
+
+            let new_string = String::from("hello");
+            let new_string_2 = new_string;
+            // here the new_string is called the moved value
+            println!("{new_string_2}");
+
+
+
+            //  values that can implement copy trait 
+
+            /*
+            
+            All the integer types, such as u32.
+            The Boolean type, bool, with values true and false.
+            All the floating-point types, such as f64.
+            The character type, char.
+            Tuples, if they only contain types that also implement Copy. For example, (i32, i32) implements Copy, but (i32, String) does not.
+            
+             */
+
+
+              /*OWNERSHIP AND FUNCTION */
+              let s = String ::from("hello");
+              takes_ownership(s);
+
+             let xy = 55;
+             makes_copy(xy);
+             /*
+                println!("{s}")
+                if i use this above statment this will result in the following error 
+                value borrowed here after move
+              */
+             println!("{xy}");
+
+                /*OWNERSHIP AND RETURN FROM FUNCTION */
+
+
+                let s1 = gives_ownership();         // gives_ownership moves its return
+                // value into s1
+
+                let s2 = String::from("hello");     // s2 comes into scope
+              //   s2 will go outof scope after this line 
+                let s3 = takes_and_gives_back(s2);  
+             
+
+                println!("{s1}");
+                // here  for s2 we have passed the value to the function present in s3 
+                //  so wencant use s2 after that 
+                println!("{s3}");
+
+
+                /*
+
+                NOTE -> if we want to use the value which is send to function but we want function not to take ownership  we have to passback the value that we passed
+
+                */
+                let s1 = String::from("helloddd");
+                let (s2, len) = calculate_length(s1);
+
+                println!("The length of '{}' is {}.", s2, len);
+
+                
     }
+    fn takes_ownership(some_string: String) { // some_string comes into scope
+        println!("{}", some_string);
+    } // Here, some_string goes out of scope and `drop` is called. The backing
+    // memory is freed.
+    
+    fn makes_copy(some_integer: i32) { // some_integer comes into scope
+        println!("{}", some_integer);
+    } // Here, some_integer goes out of scope. Nothing special happens.
+
+
+    fn gives_ownership() -> String {             // gives_ownership will move its
+      // return value into the function
+      // that calls it
+
+    let some_string = String::from("yours"); // some_string comes into scope
+
+    some_string                              // some_string is returned and
+          // moves out to the calling
+          // function
+    }
+
+    // This function takes a String and returns one
+    fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
+                  // scope
+
+    a_string  // a_string is returned and moves out to the calling function
+    }
+    fn calculate_length(s: String) -> (String, usize) {
+
+
+      let length = s.len(); // len() returns the length of a String
+  
+      (s, length)
+  }
